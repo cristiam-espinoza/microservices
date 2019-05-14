@@ -23,8 +23,10 @@ namespace Contoso.Microservices.Inventary.Controllers
 
         public IActionResult Articles()
         {
-            var model = new ArticlesViewModel();
-            model.Articles = articleRepository.GetLatest();
+            var model = new ArticlesViewModel
+            {
+                Articles = articleRepository.GetLatest()
+            };
 
             return View(model);
         }
